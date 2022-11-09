@@ -1,29 +1,21 @@
 "use strict";
 console.log("callback.js");
 
-const btn1El = document.getElementById("btn1");
-const timeEl = document.getElementById("time");
-
-btn1El.addEventListener("click", () => {
-  console.log("paspaudei");
-  // ivykdo nurodyta funcija po nurodyto laiko
+function getPost1() {
   setTimeout(() => {
-    console.log("paspaudei time out");
+    console.log("Post 1");
   }, 3000);
-});
-
-function sayHi() {
-  console.log("Hello TimeOut");
 }
-// setTimeout(sayHi, 3000);
-
-//set interval vykdo kazkoki koda kas kazkiek ms
-const int1 = setInterval(tick, 1000);
-
-function tick() {
-  const now = new Date();
-  timeEl.textContent = now.toLocaleString("lt-LT", { timeStyle: "medium" });
+function getPost2() {
+  setTimeout(() => {
+    console.log("Post 2");
+  }, 2000);
 }
-// tick();
-
-setTimeout(() => clearInterval(int1), 5000);
+function getPost3() {
+  setTimeout(() => {
+    console.log("Post 3");
+  }, 1800);
+}
+getPost1();
+getPost2();
+getPost3();
